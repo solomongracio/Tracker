@@ -17,6 +17,7 @@ speed-measure-plugin*.json
 # IDEs and editors
 /.idea
 .project
+.firebase
 .classpath
 .c9/
 *.launch
@@ -44,3 +45,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# DB config
+/src/app/firebase-config.ts

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MessagingService } from "./services/messaging.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-tracker';
+  message;
+
+  constructor(private msgService: MessagingService) {}
+
+  ngOnInit() {
+    this.msgService.getPermission()
+    this.msgService.receiveMessage()
+    this.message = this.msgService.currentMessage
+  }
+
+  login() {
+    this.msgService.login();
+  }
 }
